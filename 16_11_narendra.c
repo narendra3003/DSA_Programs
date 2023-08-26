@@ -1,24 +1,46 @@
 /*Array impimentation of stack*/
+
+/*
+name = Narendra Dukhande
+Roll No. = 16
+pid = 11
+SE-IT (sem 3)
+2023-24
+*/
+
 #include<stdio.h>
 int head = -1;
 int n=5, x, choice;
-void push(int x, int arr[]){
-    if(head==n-1){
+int arr[5];
+void makeEmpty(int arr[])
+{
+    head=-1;
+}
+void push(int x, int arr[])
+{
+    if(head==n-1)
+    {
+        //Stack Overflow
         printf("Stack is full");
         return;
     }
     head++;
     arr[head]= x;
 }
-void pop(int arr[]){
-    if(head==-1){
+void pop(int arr[])
+{
+    if(head==-1)
+    {
         printf("empty Stack");
         return;
     }
     head--;
 }
-void printArr(int arr[]){
-    if(head==-1){
+void printArr(int arr[])
+{
+    if(head==-1)
+    {
+        //Stack Underflow
         printf("Stack is empty");
         return;
     }
@@ -28,10 +50,6 @@ void printArr(int arr[]){
 }
 void main()
 {
-    printf("Enter the array length: ");
-    scanf("%d", &n);
-
-    int arr[n];
 
     /*calling the everlasting choices*/
     while(choice!=4)

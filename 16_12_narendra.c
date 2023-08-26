@@ -1,52 +1,78 @@
-/*Array implementation of Queue*/
+/*Array implementation of Normal Queue*/
+
+/*
+name = Narendra Dukhande
+Roll No. = 16
+pid = 12
+SE-IT (sem 3)
+2023-24
+*/
+
 #include<stdio.h>
 int f=-1, r=-1;
 int n=5, x, choice;
-void enQueue(int x, int arr[]){
-    if(r==n-1){
+int arr[5];
+void makeEmpty(int arr[])
+{
+    //making Queue empty
+    f=r=-1;
+}
+void enQueue(int x, int arr[])
+{
+    if(r==n-1)
+    {
+        //Queue Overflow
         printf("Queue is full");
         return;
     }
-    if(f==-1){
+    if(f==-1)
+    {
+        //entering first value
         f++;
     }
     r++;
     arr[r]= x;
 }
-void pop(int arr[]){
-    if(f==-1){
+void pop(int arr[])
+{
+    if(f==-1)
+    {
+        //Queue Underflow
         printf("Queue is empty");
         return;
     }
-    if(f==r){
+    if(f==r)
+    {
+        //single element to pop
         f=-1;r=-1;
         return;
     }
     f++;
 }
-void printArr(int arr[]){
-    if(f==-1){
+void printArr(int arr[])
+{
+    if(f==-1)
+    {
+        //no element to print
         printf("Queue is empty");
         return;
     }
-    for(int i=0; i<= head; i++){
+
+    for(int i=f; i<= r; i++)
+    {
         printf("%d\n", arr[i]);
     }
 }
 void main()
 {
-    printf("Enter the array length: ");
-    scanf("%d", &n);
-
-    int arr[n];
 
     /*calling the everlasting choices*/
     while(choice!=4)
     {
         /*description of menu bar*/
         printf("\n\n\n\n-----These are the menu panel-----");
-        printf("\n1. Enter a value");
-        printf("\n2. Delete a value");
+        printf("\n1. Enter in Queue");
+        printf("\n2. Delete from Queue");
         printf("\n3. Traverse");
         printf("\n4. Exit");
         printf("\nenter the option no.: ");
