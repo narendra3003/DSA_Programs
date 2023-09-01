@@ -84,5 +84,5 @@ void main()
     }/*end of while*/
 
     /*code execution completed*/
-    printf("You got exit");
+    printf("You got exit\n");
 }
