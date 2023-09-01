@@ -1,4 +1,4 @@
-queue/*Array implementation of Normal Queue*/
+/*Array implementation of Normal Queue*/
 
 /*
 name = Narendra Dukhande
