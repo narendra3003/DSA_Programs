@@ -1,4 +1,4 @@
-/*Array implementation of Normal Queue*/
+queue/*Array implementation of Normal Queue*/
 
 /*
 name = Narendra Dukhande
@@ -33,7 +33,7 @@ void enQueue(int x, int arr[])
     r++;
     arr[r]= x;
 }
-void pop(int arr[])
+void deQueue(int arr[])
 {
     if(f==-1)
     {
@@ -85,9 +85,9 @@ void main()
             case 1: 
             printf("enter the number you wnat to push: ");
             scanf("%d", &x);
-            push(x, arr);
+            enQueue(x, arr);
                 break;
-            case 2: pop(arr);
+            case 2: deQueue(arr);
                 break;
             case 3: printArr(arr);
                 break;
