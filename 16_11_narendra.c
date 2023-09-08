@@ -36,7 +36,7 @@ void pop(int arr[])
     }
     head--;
 }
-void printArr(int arr[])
+void display(int arr[])
 {
     if(head==-1)
     {
@@ -74,7 +74,7 @@ void main()
                 break;
             case 2: pop(arr);
                 break;
-            case 3: printArr(arr);
+            case 3: display(arr);
                 break;
             case 4:
                 break;
