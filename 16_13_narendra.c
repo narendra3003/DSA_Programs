@@ -49,7 +49,7 @@ void deQueue(int arr[])
     }
     f=(f+1)%n;
 }
-void printArr(int arr[])
+void display(int arr[])
 {
     if(f==-1)
     {
@@ -88,7 +88,7 @@ void main()
                 break;
             case 2: deQueue(arr);
                 break;
-            case 3: printArr(arr);
+            case 3: display(arr);
                 break;
             case 4:
                 break;
