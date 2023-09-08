@@ -93,7 +93,7 @@ void deQueueRear(int arr[])
     	r--;
     }
 }
-void printArr(int arr[])
+void display(int arr[])
 {
     if(f==-1)
     {
@@ -141,7 +141,7 @@ void main()
                 break;
             case 4: deQueueRear(arr);
                 break;
-            case 5: printArr(arr);
+            case 5: display(arr);
                 break;
             case 6:
                 break;
