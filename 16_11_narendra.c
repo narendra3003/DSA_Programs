@@ -68,7 +68,7 @@ void main()
         {
             /*case-wise calling functions*/
             case 1: 
-            printf("enter the number you wnat to push: ");
+            printf("enter the number you want to push: ");
             scanf("%d", &x);
             push(x, arr);
                 break;
