@@ -9,9 +9,7 @@ SE-IT (sem 3)
 */
 
 #include<stdio.h>
-int f=-1, r=-1;
-int n=5, x, choice;
-int arr[5];
+
 
 void main()
 {
