@@ -101,10 +101,10 @@ void display(int arr[])
         printf("Queue is empty");
         return;
     }
-	for(int i=f; i!=r; (i+1)%n){
+	for(int i=f; i!=r; i=(i+1)%n){
 		printf("%d\n", arr[i]);
 	}
-	printf("%d", arr[i]);
+	printf("%d", arr[r]);
 }
 void main()
 {
