@@ -116,8 +116,8 @@ void main()
     {
         /*description of menu bar*/
         printf("\n\n\n\n-----These are the menu panel-----");
-        printf("\n1. Enter in Queue from front end");
-        printf("\n2. Enter in Queue from rear end");
+        printf("\n1. Enter element in Queue from front end");
+        printf("\n2. Enter element in Queue from rear end");
         printf("\n3. Delete from Queue from front end");
         printf("\n4. Delete from Queue from rear end");
         printf("\n5. Traverse");
