@@ -101,12 +101,10 @@ void printArr(int arr[])
         printf("Queue is empty");
         return;
     }
-	int i=f-1;
-    do
-    {
-    	i=(i+1)%n;
-        printf("%d\n", arr[i]);
-    }while(i!=r);
+	for(int i=f; i!=r; (i+1)%n){
+		printf("%d\n", arr[i]);
+	}
+	printf("%d", arr[i]);
 }
 void main()
 {
