@@ -169,7 +169,7 @@ void display()
     temp=list;
     while(temp->next!=NULL)
     {
-        printf("%d", temp->info);
+        printf("%d\n", temp->info);
         temp=temp->next;
     }
     printf("%d", temp->info);
