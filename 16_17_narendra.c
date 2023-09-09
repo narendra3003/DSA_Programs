@@ -9,19 +9,90 @@ SE-IT (sem 3)
 */
 
 #include<stdio.h>
-int x, choice;
+#include<stdlib.h>
 
+int choice, x;
+
+//strcture of a node of LL
+struct node
+{
+    struct node *next;
+    int info;
+};
+
+//to create memory for a node
+struct node* getnode()
+{
+    return ((struct node*)malloc(sizeof(struct node)));
+}
+
+//to free a node
+void freenode(struct node* p)
+{
+    free(p);
+}
+
+//initializing the LL
+struct node *list = NULL;
+
+//to insert an element at end of LL
 void enQueue(int x)
 {
-
+    if(list==NULL)
+    {
+        //if empty
+        struct node *newnode;
+        newnode=getnode();
+        newnode->info=x;
+        newnode->next=list;
+        list=newnode;
+        return;
+    }
+    //attach node at the end
+    struct node *nn, *temp;
+    nn= getnode();
+    nn->info = x;
+    nn->next =NULL;
+    temp = list;
+    while(temp->next!=NULL)
+    {
+        temp= temp->next;
+    }
+    temp->next = nn;
 }
+
+//to delete first node
 void deQueue()
 {
-
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    struct node *temp;
+    temp =list;
+    list = list->next;
+    freenode(temp);
 }
+
+//to display LL
 void display()
 {
-
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    struct node *temp;
+    temp=list;
+    while(temp->next!=NULL)
+    {
+        printf("%d\n", temp->info);
+        temp=temp->next;
+    }
+    printf("%d", temp->info);
 }
 void main()
 {
@@ -43,7 +114,7 @@ void main()
         {
             /*case-wise calling functions*/
             case 1: 
-            printf("enter the number you want to push: ");
+            printf("enter the number you want to add in the Queue: ");
             scanf("%d", &x);
             enQueue(x);
                 break;
