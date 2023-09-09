@@ -9,20 +9,105 @@ SE-IT (sem 3)
 */
 
 #include<stdio.h>
-int choice;
-int x;
+#include<stdlib.h>
+
+int choice, x;
+
+//strcture of a node of LL
+struct node
+{
+    struct node *next;
+    int info;
+};
+
+//to create memory for a node
+struct node* getnode()
+{
+    return ((struct node*)malloc(sizeof(struct node)));
+}
+
+//to free a node
+void freenode(struct node* p)
+{
+    free(p);
+}
+
+//initializing the LL
+struct node *list = NULL;
+
+//to insert an element at end of LL
 void push(int x)
 {
-
+    if(list==NULL)
+    {
+        //if empty
+        struct node *newnode;
+        newnode=getnode();
+        newnode->info=x;
+        newnode->next=list;
+        list=newnode;
+        return;
+    }
+    //attach node at the end
+    struct node *nn, *temp;
+    nn= getnode();
+    nn->info = x;
+    nn->next =NULL;
+    temp = list;
+    while(temp->next!=NULL)
+    {
+        temp= temp->next;
+    }
+    temp->next = nn;
 }
+
+//to delete last node
 void pop()
 {
-
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    if(list->next==NULL)
+    {
+        struct node *temp;
+        temp =list;
+        list = list->next;
+        freenode(temp);
+        return;
+    }
+    struct node *temp, *t2;
+    temp=list;
+    while(temp->next->next!=NULL)
+    {
+        t2=temp;
+        temp =temp->next;
+    }
+    freenode(temp->next);
+    temp->next=NULL;
 }
+
+//to display LL
 void display()
 {
-
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    struct node *temp;
+    temp=list;
+    while(temp->next!=NULL)
+    {
+        printf("%d\n", temp->info);
+        temp=temp->next;
+    }
+    printf("%d", temp->info);
 }
+
 void main()
 {
 
