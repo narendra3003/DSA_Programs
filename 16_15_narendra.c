@@ -9,7 +9,170 @@ SE-IT (sem 3)
 */
 
 #include<stdio.h>
+#include<stdlib.h>
+//stdlib for malloc and free
 
+//global variables
+int choice, x, p;
+
+//strcture of a node of LL
+struct node
+{
+    struct node *next;
+    int info;
+};
+
+//to create memory for a node
+struct node* getnode()
+{
+    return ((struct node*)malloc(sizeof(struct node)));
+}
+
+//to free a node
+void freenode(struct node* p)
+{
+    free(p);
+}
+
+//initializing the LL
+struct node *list = NULL;
+
+//to insert an element in beggining of LL
+void insertBeg(int x)
+{
+    struct node *newnode;
+    newnode=getnode();
+    newnode->info=x;
+    newnode->next=list;
+    list=newnode;
+}
+
+//to insert an element at p point in LL
+void insertAtP(int p, int x)
+{
+    if(list==NULL||p==1)
+    {
+        //if empty or insert at beg
+        insertBeg(x);
+        return;
+    }
+    struct node *nn, *temp;
+    nn=getnode();
+    nn->info=x;
+    temp=list;
+
+    for(int i=1; i<p-1; i++)
+    {
+        temp = temp->next;
+    }
+
+    nn->next = temp->next;
+    temp->next=nn;
+}
+
+//to insert an element at end of LL
+void insertEnd(int x)
+{
+    if(list==NULL)
+    {
+        //if empty
+        insertBeg(x);
+        return;
+    }
+    struct node *nn, *temp;
+    nn= getnode();
+    nn->info = x;
+    nn->next =NULL;
+    temp = list;
+    while(temp->next!=NULL)
+    {
+        temp= temp->next;
+    }
+    temp->next = nn;
+}
+
+//to delete first node
+void deleteBeg()
+{
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    struct node *temp;
+    temp =list;
+    list = list->next;
+    freenode(temp);
+}
+
+//to delete pth node
+void deleteAtP(int p)
+{
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    if(p==1)
+    {
+        deleteBeg();
+        return;
+    }
+    struct node *temp, *t2;
+    temp =list;
+    for(int i=1; i<p; i++)
+    {
+        t2 = temp;
+        temp= temp->next;
+    }
+    t2->next=t2->next->next;
+    freenode(temp);
+}
+
+//to delete last node
+void deleteEnd()
+{
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    if(list->next==NULL)
+    {
+        deleteBeg();
+    }
+    struct node *temp, *t2;
+    temp=list;
+    while(temp->next->next!=NULL)
+    {
+        t2=temp;
+        temp =temp->next;
+    }
+    freenode(temp->next);
+    temp->next=NULL;
+}
+
+//to display LL
+void display()
+{
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    struct node *temp;
+    temp=list;
+    while(temp->next!=NULL)
+    {
+        printf("%d", temp->info);
+        temp=temp->next;
+    }
+    printf("%d", temp->info);
+}
 
 void main()
 {
@@ -35,27 +198,35 @@ void main()
         {
             /*case-wise calling functions*/
             case 1: 
-            printf("enter the number to be added in LL: ");
-            scanf("%d", &x);
-            insertBeg(x);
+                printf("enter the number to be added in LL: ");
+                scanf("%d", &x);
+                insertBeg(x);
                 break;
             case 2: 
-            printf("enter the number to be added in LL: ");
-            scanf("%d", &x);
-            insertAtP(p, x);
+                printf("enter the number to be added in LL: ");
+                scanf("%d", &x);
+                printf("enter the position at which to be added in LL: ");
+                scanf("%d", &p);
+                insertAtP(p, x);
                 break;
             case 3: 
-            printf("enter the number to be added in LL: ");
-            scanf("%d", &x);
-            insertAtEnd(x);
+                printf("enter the number to be added in LL: ");
+                scanf("%d", &x);
+                insertEnd(x);
                 break;
-            case 4: deleteBeg();
+            case 4: 
+                deleteBeg();
                 break;
-            case 5: deleteAtP();
+            case 5: 
+                printf("enter the position at which to be deleted in LL: ");
+                scanf("%d", &p);
+                deleteAtP(p);
                 break;
-            case 6: deleteEnd();
+            case 6: 
+                deleteEnd();
                 break;
-            case 7: display();
+            case 7: 
+                display();
                 break;
             case 8:
                 break;
