@@ -143,6 +143,7 @@ void deleteEnd()
     if(list->next==NULL)
     {
         deleteBeg();
+        return;
     }
     struct node *temp, *t2;
     temp=list;
