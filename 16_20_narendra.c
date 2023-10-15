@@ -8,23 +8,40 @@ SE-IT (sem 3)
 2023-24
 */
 
-#include <stdio.h> 
-#include <stdlib.h> 
-#define MAX 10
+#include<stdio.h>
+#include<stdlib.h>
+//stdlib for malloc and free
 
-void create_queue(); 
+//strcture of a node of LL
+struct node
+{
+    struct node *next;
+    int info;
+};
+
+//to create memory for a node
+struct node* getnode()
+{
+    return ((struct node*)malloc(sizeof(struct node)));
+}
+
+//to free a node
+void freenode(struct node* p)
+{
+    free(p);
+}
+
+//initializing the LL
+struct node *list = NULL;
+
 void insert_element(int); 
 void delete_element(int); 
 void check_priority(int); 
 void display_priorityqueue(); 
 
-int pqueue[MAX]; 
-int front, rear; 
-
 void main() 
 { 
-    int n, choice;  
-    create_queue();  
+    int n, choice;
     while (1) 
     { 
         printf("\n\n\n\n-----These are the menu panel-----");
@@ -55,81 +72,79 @@ void main()
             printf("\n Please enter valid choice"); 
         } 
     } 
-}  
-void create_queue() 
-{ 
-    front = rear = -1; 
-}  
+}
+
 void insert_element(int data) 
 { 
-    if (rear >= MAX - 1) 
+    if(list==NULL)
     { 
-        printf("\nQUEUE OVERFLOW"); 
-        return; 
+        struct node *newnode;
+        newnode=getnode();
+        newnode->info=data;
+        newnode->next=list;
+        list=newnode;
     } 
-    if ((front == -1) && (rear == -1)) 
-    { 
-        front++; 
-        rear++; 
-        pqueue[rear] = data; 
-        return; 
-    }    
     else 
         check_priority(data); 
-    rear++; 
 }  
 void check_priority(int data) 
 { 
-    int i,j;  
-    for (i = 0; i <= rear; i++) 
+    struct node *nn, *temp;
+    nn=getnode();
+    nn->info=data;
+    temp=list;
+
+    while((data >= temp->next->info)&&(temp!=NULL))
     { 
-        if (data >= pqueue[i]) 
-        { 
-            for (j = rear + 1; j > i; j--) 
-            { 
-                pqueue[j] = pqueue[j - 1]; 
-            } 
-            pqueue[i] = data; 
-            return; 
-        } 
-    } 
-    pqueue[i] = data; 
-}  
+        temp=temp->next;
+    }
+    nn->next = temp->next;
+    temp->next=nn;
+}
+
+//to delete a data from LL
 void delete_element(int data)  
 { 
-    int i;  
-    if ((front==-1) && (rear==-1)) 
-    { 
-        printf("\nEmpty Queue"); 
-        return; 
-    }  
-    for (i = 0; i <= rear; i++) 
-    { 
-        if (data == pqueue[i]) 
-        { 
-            for (; i < rear; i++) 
-            { 
-                pqueue[i] = pqueue[i + 1]; 
-            } 
-            pqueue[i] = -99; 
-            rear--; 
-            if (rear == -1) 
-               front = -1; 
-            return; 
-        } 
-    } 
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+
+    struct node *temp, *t2;
+    temp =list;
+    t2=list;
+
+    while(temp->next!=NULL)
+    {
+        if(data==temp->info)
+        {
+            t2->next=t2->next->next;
+            freenode(temp);
+            return;
+        }
+        t2 = temp;
+        temp= temp->next;
+    }
     printf("\n%d element not found in queue", data); 
 } 
+
+//to display LL
 void display_priorityqueue() 
-{ 
-    if ((front == -1) && (rear == -1)) 
-    { 
-        printf("\nEmpty Queue "); 
-        return; 
-    }  
-    for (; front <= rear; front++) 
-    { 
-        printf(" %d ", pqueue[front]); 
-    } 
-     front = 0; 
-} 
+{
+    if(list==NULL)
+    {
+        //if empty
+        printf("Empty LL");
+        return;
+    }
+    struct node *temp;
+    temp=list;
+    while(temp->next!=NULL)
+    {
+        printf("%d\n", temp->info);
+        temp=temp->next;
+    }
+    printf("%d", temp->info);
+}
