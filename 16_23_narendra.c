@@ -1,9 +1,9 @@
-/*Program for Insertion sort*/
+/*Program for Merge sort*/
 
 /*
 name = Narendra Dukhande
 Roll No. = 16
-pid = 20
+pid = 23
 SE-IT (sem 3)
 2023-24
 */
