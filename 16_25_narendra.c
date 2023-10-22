@@ -1,4 +1,4 @@
-/*Program for Quick sort*/
+/*Program for Binary Search Tree*/
 
 /*
 name = Narendra Dukhande
@@ -7,6 +7,7 @@ pid = 25
 SE-IT (sem 3)
 2023-24
 */
+
 #include <stdio.h>
 #include <stdlib.h>
 
