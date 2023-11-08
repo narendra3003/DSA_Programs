@@ -7,7 +7,7 @@
 | Question Number | Program |  Link to Code |
 |:--------:|:--------:|:--------:|
 | Q1   | Write a C program to check if a given number is Fibonacci number.   | [Link](https://github.com/narendra3003/DSA_Programs/blob/main/16_01_narendra.c) |
-| Q2   | Write a C program to generate Pascal Triangle using array.   | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_02.c) |
+| Q2   | Write a C program to generate Pascal Triangle using array.   | [Link](16_02_narendra.c) |
 | Q3   | Write a C program to roll_no, name , percentange of 5 students using array of structure and display the records in ascending order of roll list.   |  [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_03.c)  |
 | Q4   |  Write a C program to roll_no, name , percentange of 5 students using array of structure and display the records in descending order of percentange.   | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_04.c)   |
 | Q5   | Write a C program to find largest element in an array  | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_05.c)   |
