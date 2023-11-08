@@ -6,11 +6,11 @@
 # Experiment List (Part A)
 | Question Number | Program |  Link to Code |
 |:--------:|:--------:|:--------:|
-| Q1   | Write a C program to check if a given number is Fibonacci number.   | [Link](https://github.com/narendra3003/DSA_Programs/blob/main/16_01_narendra.c) |
+| Q1   | Write a C program to check if a given number is Fibonacci number.   | [Link](16_01_narendra.c) |
 | Q2   | Write a C program to generate Pascal Triangle using array.   | [Link](16_02_narendra.c) |
-| Q3   | Write a C program to roll_no, name , percentange of 5 students using array of structure and display the records in ascending order of roll list.   |  [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_03.c)  |
-| Q4   |  Write a C program to roll_no, name , percentange of 5 students using array of structure and display the records in descending order of percentange.   | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_04.c)   |
-| Q5   | Write a C program to find largest element in an array  | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_05.c)   |
+| Q3   | Write a C program to roll_no, name , percentange of 5 students using array of structure and display the records in ascending order of roll list.   |  [Link](https://github.com/narendra3003/DSA_Programs/blob/main/16_03_narendra.c)  |
+| Q4   |  Write a C program to roll_no, name , percentange of 5 students using array of structure and display the records in descending order of percentange.   | [Link](https://github.com/narendra3003/DSA_Programs/blob/main/16_04_narendra.c)   |
+| Q5   | Write a C program to find largest element in an array  | [Link](16_05_narendra.c)   |
 | Q6   | Write a menu driven program to perform the following operations in an ARRAY </br> 1.INSERT </br> 2.DELETE </br> 3.TRAVERSE </br> 4.SEARCH </br> | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_06.c)   |
 | Q7   |  Define a structure data type called time_struct containing 3 members int hour, int minute and int second. Write functions that accept the structure to perform the following operations:</br>1. Input new time</br>2. Display the time</br>3. Update the time such that the function accepts the time_struct and increments the time by one second.If the increment results in 60 seconds, the then second member is set to 0 and the minute is incremented by 1. Then, if the result is 60 minutes, the minute member is set to 0 and the hour member is incremented by 1. Finally when the hour becomes 24, it is set to zero.   | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_07.c)  |
 | Q8   | Write a function that compares two arrays and returns 1 if they are identical and 0 otherwise.   | [Link](https://github.com/OldResolution/DSA_programs/blob/662f9be537ab5622a9b2b1091bb5ad2369e648f6/Savin52_08.c)   |
